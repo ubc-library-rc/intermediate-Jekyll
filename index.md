@@ -41,12 +41,12 @@ By the end of this workshop, you will be able to:
 
 ## Slides
 
-Find the workshops slide below or <a href="slides/intermediate_Jekyll.html" target="_blank">open it in a new tab</a>:
+Find the workshops slide below or <a href="slides/index.html" target="_blank">open it in a new tab</a>:
 
 <div style="overflow: hidden;
   padding-top: 56.25%;
   position: relative">
-  <iframe src="slides/intermediate_Jekyll.html" title="demo embedded slide deck" scrolling="no" frameborder="0"
+  <iframe src="slides/index.html" title="demo embedded slide deck" scrolling="no" frameborder="0"
     style="border: 0;
    height: 100%;
    left: 0;

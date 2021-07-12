@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="utf-8">
-
   <!-- Title of page (as it will appear in search results) -->
   <title>Build and customize a website with Jekyll</title>
 
@@ -148,14 +147,14 @@
             Instead of creating a new website using jekyll new, you can also clone a starting point to your local machine and serve it there. We will learn more about that in Themes.
             If you have a Gemfile in the directory of the theme you found, you need to use Bundler to install all the gems before serving the website. Jekyll bundler is a gem that ensures compatibility of all the plugins across different environments with Jekyll installed on your system. You need to install Bundler after installing Jekyll:
             Jekyll monitors the project folder and rebuilds your website anytime you make a change. If you want to stop serving your website locally, use Ctrl + C.
-        </section>  
+    </section>  
 
     <section data-background="#002145">
         <h2>Site Structure</h2>
 
         <aside class="notes">
             The biggest difference between site generators is the tools and capabilities they offer to write, publish, and monitor your content in the desired style. Jekyll has a standard structure to find the content of your website and display them properly. The information here is from official Jekyll documentation](https://jekyllrb.com/docs/). A basic Jekyll website usually has the following directory structure:
-        </section> 
+        </aside>
     </section> 
 
     <section>
@@ -203,7 +202,6 @@
 
         <p>Check these website and find a theme. </p>
         <p><br> If you are not sure, use Hyde: https://github.com/poole/hyde</p>
-        </p>
 
         <aside class="notes">
             Jekyll themes provide community-maintained templates and slides for users to build their websites. While the basic Minima theme is very robust, you can choose themes from many free resources, such as:
@@ -294,33 +292,32 @@
             <h2>Layouts</h2>
             <p>specify the general structure of a webpage.</p>
             <p>Open default.html in _layouts directory:</p>
-            <img src="/Layouts.PNG"  height="391" width="387">
+            <img src="./figures/layouts.png" alt="Layout example" height="391" width="387" />
 
 
         <aside class="notes">
             When browsing a website, many sections stay the same across multiple pages. Layouts in Jekyll give you an easy solution to build an HTML file and use it across your website. You have seen one of them just in the previous section.
         
-            The file starts with tags that declare the type and language of the file. Here, we are not using Front matter since the file is not inheriting any other layout. The <head> tag is replaced with an include file. We learn more about them in the next section. In the <body> tag, the sidebar is created by another include file. The content will be replaced after interpreting the .md files.
+            The file starts with tags that declare the type and language of the file. Here, we are not using Front matter since the file is not inheriting any other layout. The "head" tag is replaced with an include file. We learn more about them in the next section. In the "body" tag, the sidebar is created by another include file. The content will be replaced after interpreting the .md files.
         </aside>
         </section> 
 
-
         <section>
             <h2>Includes</h2>
-            <p>snippets of code that we want to use over multiple pages</p>
-            <p>Google analytics tags, social media forms, headers and footers</p>
-            Lets look at the content of head.html here:</p>
-            <img src="/Includes.PNG"  height="596" width="568">
+            <p style="font-size:60%;">snippets of code that we want to use over multiple pages</p>
+            <p style="font-size:60%;">Google analytics tags, social media forms, headers and footers</p>
+            <p style="font-size:60%;">Lets look at the content of head.html here:</p>
+            <img src="./figures/includes.png" alt="Include example" height="596" width="568"/>
 
             <p>Includes can be used in other web pages via Liquid tags: </p>
-            <pre><code>
+            <pre><code data-trim data-noescape>
                 {% include head.html %}
             </code></pre>
 
         <aside class="notes">
-            The content of this file replaces the <head> section of all HTML files in Hyde. In the <title> section, you can find a conditional statement that changes the value in <title> tag based on your location on the website.
+            The content of this file replaces the head section of all HTML files in Hyde. In the title section, you can find a conditional statement that changes the value in title tag based on your location on the website.
         </aside>
-        </section> 
+        </section>
 
         <section>
             <h2>Variables</h2>
@@ -412,6 +409,5 @@
           plugins: [ RevealHighlight ]
         });
     </script>    
-
     </body>
 </html>
