@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- Title of page (as it will appear in search results) -->
+  <title>Build and customize a website with Jekyll</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://ubc-library-rc.github.io/reveal-ubc/css/reset.css">
+    <link rel="stylesheet" href="https://ubc-library-rc.github.io/reveal-ubc/css/reveal.css">
+    <link rel="stylesheet" href="https://ubc-library-rc.github.io/reveal-ubc/css/ubc.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="https://ubc-library-rc.github.io/reveal-ubc/lib/css/monokai.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'https://ubc-library-rc.github.io/reveal-ubc/css/print/pdf.css' : 'https://ubc-library-rc.github.io/reveal-ubc/css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <div class="slides">
+
+    <section>
+        <h2>Jekyll Intermediate Workshop</h2>
+        <h4>Build and customize a website with Jekyll</h4>
+        <aside class="notes">
+            Hello everyone, Welcome to this workshop which aims to support you to get familiar with coding environments and
+            setup your personal environment for development of codes. This workshop is built for people who are fairly familiar with coding 
+            but would like to improve their knowledge about the tools and processes that improves their productivity.
+            
+            My name is Shayan Fahimi. I am a PhD student in engineering and ...
+        </aside>
+    </section>
+
+    <section style="text-align: left;">
+        <h3>Land Acknowledgement</h3>
+        <p>UBC Vancouver is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam), səl̓ilwətaɁɬ təməxʷ (Tsleil-Waututh), Stz’uminus, S’ólh Téméxw (Stó:lō), Skwxwú7mesh-ulh Temíx̱w (Squamish), and Coast Salish peoples.</p>
+        <span class="fragment"><p>Please take a moment to explore <b><a href="https://www.native-land.ca/" target="_blank">native-land.ca</a></b> so that you can visualize the indigenous territories, languages, and treaties in your area.</p></span>
+        <aside class="notes">
+            But before going into more details I would like to begin by acknowledging that I am fortunate to present this workshop in Burnaby which is the unceded territory of the Coast Salish People.
+            Please take a moment to explore this website and learn more about the land you are located now. 
+        </aside>
+    </section>
+
+    <section style="text-align: left;">
+        <h2>Outline</h2>
+        <ul>
+            <li>Introduction</li>
+            <li>Installation</li>
+            <li>Building your Website</li>
+            <li>Site Structure</li>
+            <li>Blogging</li>
+            <li>Jekyll Plugins</li>
+            <li>Serving</li>
+        </ul>
+        <aside class="notes">
+            This workshop is about building websites and we start by asking about your reasons for attending this workshop.
+            Then, we talk about Jekyll and review the installation process.
+            After installing Jekyll on your local machine, you have a few choices to build your first website. 
+            We go over these choices and use one of them to build a website and explain the directory structure 
+            in Jekyll. We talk about themes, Liquid language, layouts and includes and briefly introduce CSS.
+            Then, we talk about blogging in Jekyll and plugins that extend Jekyll built-in capabilities. 
+            Finally, we learn about serving the website online using Github or other web hosting services.
+        </aside>
+    </section>
+
+    <section data-background="#002145">
+        <h2>Why do you need an academic website?</h2>
+        <aside class="notes">
+            You can use Jekyll to build an academic website and showcase your projects, resume, or your hobbies
+            or build a personal website or a website that supports your projects and provide documentation or
+            examples. Please use the chat box to write your goal for attending this workshop.
+        </aside>
+    </section>
+
+    <section data-background="#002145">
+        <h2>What is Jekyll?</h2>
+        <span class="fragment"><p>Static website generator based on Ruby</p></span>
+        <span class="fragment"><p>Developed by Tom Preston-Werner</p></span>
+        <span class="fragment"><p>Fully integrated with Github</p></span>
+        <aside class="notes">
+            Jekyll is a popular website generator based on Ruby, which is designed to build static websites. Jekyll is developed by Tom Preston-Werner. Jekyll is fully integrated with Github and can be hosted for free on Github Pages. 
+            Jekyll takes a template directory and runs it through two converters, Textile and Liquid. The result is a complete static website, a bunch of HTML and CSS files, ready to be served.
+            </aside>
+    </section>
+
+    <section>
+        <h2>Static vs Dynamic</h2>
+        <aside class="notes">
+            Website generators are divided into two categories: Dynamic and Static. Static pages are pre-rendered, cached, and delivered to the user via a content delivery network (CDN). On the other hand, Dynamic pages are generated in real time when the user sends the request.
+            Static websites are easier for the web browser to load and are great choices for personal blogs, academic websites, or simple business websites. They eliminate the complexity of creating and working with databases and do not have any unnecessary overhead.
+            To use static website generators, you are generally expected to use code-editors to build your website. Also, knowing a bit of CSS and HTML can help you to customize a theme for your website. 
+        </aside>
+    </section>
+
+    <section>
+        <h2>Installation</h2>
+        <p>Ruby compiler</p>
+        <p>Rubygems</p>
+        <p>For this workshop, please install Jekyll on your system following the installation guide</p></span>
+        </span><p>Verify the installation:</p>
+        <pre><code data-trim data-noescape>
+            $ jekyll -v
+        </code></pre>
+        <aside class="notes">
+            To install Jekyll on your system, first, you need to install two other programs. Jekyll is written in Ruby, an interpreted, high-level, general-purpose programming language. Therefore, you need to install it to run Jekyll and maintain your Jekyll website. Another program is RubyGems, which is a package manager for the Ruby programming language.
+        </aside>
+    </section>
+
+    <section>
+        <h2>Build</h2>
+        <span class="fragment"></span><p>Jekyll Now</p></span>
+        <span class="fragment"></span><pre><code data-trim data-noescape>
+            $ jekyll new [name of blog]
+            $ jekyll serve
+        </code></pre></span>
+        <p>Open localhost: http://127.0.0.1:4000</p>
+        <aside class="notes">
+            You can build a new boilerplate website with a default gem-based theme by navigating to somewhere you would like to create your first project and running
+        </aside>
+    </section>  
+
+    <section>
+        <h2>What is Bundler?</h2>
+        <pre><code data-trim data-noescape>
+            $ gem install bundler
+            $ bundle exec jekyll serve
+        </code></pre>
+        <aside class="notes">
+            Instead of creating a new website using jekyll new, you can also clone a starting point to your local machine and serve it there. We will learn more about that in Themes.
+            If you have a Gemfile in the directory of the theme you found, you need to use Bundler to install all the gems before serving the website. Jekyll bundler is a gem that ensures compatibility of all the plugins across different environments with Jekyll installed on your system. You need to install Bundler after installing Jekyll:
+            Jekyll monitors the project folder and rebuilds your website anytime you make a change. If you want to stop serving your website locally, use Ctrl + C.
+        </section>  
+
+    <section data-background="#002145">
+        <h2>Site Structure</h2>
+
+        <aside class="notes">
+            The biggest difference between site generators is the tools and capabilities they offer to write, publish, and monitor your content in the desired style. Jekyll has a standard structure to find the content of your website and display them properly. The information here is from official Jekyll documentation](https://jekyllrb.com/docs/). A basic Jekyll website usually has the following directory structure:
+        </section> 
+    </section> 
+
+    <section>
+        <h2>Site Structure</h2>
+        <pre><code data-trim data-noescape>
+        .
+        ├── _config.yml
+        ├── _data
+        │   └── members.yml
+        ├── _drafts
+        │   ├── begin-with-the-crazy-ideas.md
+        ├── _includes
+        |   ├── footer.html
+        |   └── header.html
+        ├── _layouts
+        |   ├── default.html
+        |   └── post.html
+        ├── _posts
+        |   ├── 2021-05-23-why-I-chose-UBC.md
+        |   ├── 2021-01-12-welcome-to-jekyll.md
+        ├── _sass
+        |   ├── _base.scss
+        |   └── _layout.scss
+        ├── _site
+        ├── 404.html
+        ├── about.md
+        ├── .jekyll-cache
+        │   └── Jekyll
+        │       └── Cache
+        │           └── [...]
+        ├── .jekyll-metadata
+        ├── Gemfile
+        ├── Gemfile.lock
+        └── index.html
+        </code></pre>
+    </section> 
+
+    <section>
+        <h2>Themes</h2>
+        <p>You can find Jekyll themes for various types of websites:</p>
+
+        <p align="left">https://github.com/topics/jekyll-theme</p>
+        <p align="left">https://jekyllthemes.io/free</p>
+        <p align="left">https://jekyll-themes.com/free/</p>
+
+        <p>Check these website and find a theme. </p>
+        <p><br> If you are not sure, use Hyde: https://github.com/poole/hyde</p>
+        </p>
+
+        <aside class="notes">
+            Jekyll themes provide community-maintained templates and slides for users to build their websites. While the basic Minima theme is very robust, you can choose themes from many free resources, such as:
+            You can clone or fork the themes available on Github. For other themes, you need to download and unzip them on your local machine. Then, serve it using Jekyll. Remember that you need to install the gems used by third-party themes before serving them by running bundle exec jekyll serve the first time you serve them on your local machine.
+            If you are interested to use themes other than [Minima], Hyde is a simple, two-column, and uncomplicated theme. We will use this theme for the rest of this workshop to demonstrate different tools and capabilities of Jekyll.
+        </aside> 
+    </section> 
+
+    <section>
+        <h2>Activity 1</h2>
+        <p> Find a themes and install it on your local machine </p>
+    
+    </section> 
+
+    <section>
+        <h2>Hyde</h2>
+        <p>Download it here: https://github.com/poole/hyde</p>
+        <img src="https://camo.githubusercontent.com/eeb04dcd8379e7482e06998685c707fc1013c3a3f517687aa4a294cf22f74d33/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f39383638312f313833313232382f34326166366336612d373338342d313165332d393866622d6530623932336565303436382e706e67"  height="336" width="528">
+        <p>We will use this theme to learn about other features of Jekyll. The concepts work in other themes.</p> 
+    </section> 
+
+    <section data-background="#002145">
+        <h2>Liquid</h2>
+        <p> Liquid Tags</p>
+        <p> Liquid Filters</p>
+        <aside class="notes">
+            Jekyll uses the Liquid templating language to process your site’s pages. Liquid follows simple templating rules and helps you to add logic or supplemental content to your simple HTML or Markdown pages. To use Liquid in HTML or Markdown pages, you need to add “Front matter” notation.
+        </aside>
+    </section> 
+
+    <section>
+        <h2>Liquid Tags</h2>
+        <p> To output content into a page, two curly braces are used e.g. </p>
+        <pre><code data-trim data-noescape>{{ variable }} </code></pre>
+            
+        <p>To perform logic statements or run a loop, curly braces are used with a percentage sign on each side e.g. </p>  
+        <pre><code data-trim data-noescape>{% if statement %}</code></pre>
+        
+    </section> 
+
+    <section>
+        <h2>Liquid Filters</h2>
+        <p> 
+            You can use filters to change strings or manipulate a list of items.
+        </p>
+
+        <pre><code data-trim data-noescape>
+            {{ "How many characters are in this string?" | size }}
+        </code></pre>
+    </section> 
+
+    <section>
+        <h2>Front Matter</h2>
+        <p style="font-size:80%;"> 
+            guides Jekyll to parse your Markdown files and put content in the right place
+            Use YAML format wrapped between triple-dashed lines.
+            Open any of the files in _posts folder
+        </p>
+
+        <pre><code data-trim data-noescape>
+            ---
+            layout: post
+            title: Blogging Like a Hacker
+            ---
+        </code></pre>
+
+        <p style="font-size:80%;"> 
+           Now open page.html in the _layout folder:
+        </p>
+
+        <pre><code>
+            ---
+            layout: default
+            ---
+            
+            <div class="page">
+            <h1 class="page-title">{{ page.title }}</h1>
+                {{ content }}
+            </div>
+        </code></pre>
+
+        <aside class="notes">
+            Front matter contains information about your webpage. Front matter must take the format of valid YAML or JSON wrapped between triple-dashed lines. When Jekyll finds this information in your files, it processes them differently. The front matter must be the first thing in your file.
+        </aside>
+        </section> 
+
+        <section>
+            <h2>Layouts</h2>
+            <p>specify the general structure of a webpage.</p>
+            <p>Open default.html in _layouts directory:</p>
+            <img src="/Layouts.PNG"  height="391" width="387">
+
+
+        <aside class="notes">
+            When browsing a website, many sections stay the same across multiple pages. Layouts in Jekyll give you an easy solution to build an HTML file and use it across your website. You have seen one of them just in the previous section.
+        
+            The file starts with tags that declare the type and language of the file. Here, we are not using Front matter since the file is not inheriting any other layout. The <head> tag is replaced with an include file. We learn more about them in the next section. In the <body> tag, the sidebar is created by another include file. The content will be replaced after interpreting the .md files.
+        </aside>
+        </section> 
+
+
+        <section>
+            <h2>Includes</h2>
+            <p>snippets of code that we want to use over multiple pages</p>
+            <p>Google analytics tags, social media forms, headers and footers</p>
+            Lets look at the content of head.html here:</p>
+            <img src="/Includes.PNG"  height="596" width="568">
+
+            <p>Includes can be used in other web pages via Liquid tags: </p>
+            <pre><code>
+                {% include head.html %}
+            </code></pre>
+
+        <aside class="notes">
+            The content of this file replaces the <head> section of all HTML files in Hyde. In the <title> section, you can find a conditional statement that changes the value in <title> tag based on your location on the website.
+        </aside>
+        </section> 
+
+        <section>
+            <h2>Variables</h2>
+
+        <aside class="notes">
+        </aside>
+        </section>
+
+        <section data-background="#002145">
+            <h2>Blogging</h2>
+
+        <aside class="notes">
+        </aside>
+        </section>
+
+        <section>
+            <h2>Pages</h2>
+
+        <aside class="notes">
+        </aside>
+        </section>
+
+        <section>
+            <h2>Posts</h2>
+
+        <aside class="notes">
+        </aside>
+        </section>
+
+        <section>
+            <h2>Jekyll Plugins</h2>
+
+        <aside class="notes">
+        </aside>
+        </section>
+
+        <section data-background="#002145">
+            <h2>Serve the website online</h2>
+
+        <aside class="notes">
+        </aside>
+        </section>
+
+        <section>
+            <h2>Github Pages</h2>
+
+        <aside class="notes">
+        </aside>
+        </section>
+
+    <section data-background="#002145">
+       <p> More from the Research Commons at (UBC-V)</p>
+       <ul>
+         <li><a href="https://researchcommons.library.ubc.ca/">researchcommons.library.ubc.ca</a></li>
+         <li><a href="https://researchcommons.library.ubc.ca/events/">Upcoming events</a></li>
+         <li><a href="https://researchcommons.library.ubc.ca/oer/">Open Educational Resources (OERs)</a></li>
+       </ul>
+    </section>
+
+</div>
+
+<script src="https://ubc-library-rc.github.io/reveal-ubc/js/reveal.js"></script>
+
+    <script>
+
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+
+            transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [
+                { src: 'https://ubc-library-rc.github.io/reveal-ubc/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'https://ubc-library-rc.github.io/reveal-ubc/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'https://ubc-library-rc.github.io/reveal-ubc/plugin/highlight/highlight.js' },
+                { src: 'https://ubc-library-rc.github.io/reveal-ubc/plugin/search/search.js', async: true },
+                { src: 'https://ubc-library-rc.github.io/reveal-ubc/plugin/zoom-js/zoom.js', async: true },
+                { src: 'https://ubc-library-rc.github.io/reveal-ubc/plugin/notes/notes.js', async: true }
+                ]
+            });
+
+    </script>
+    <script>
+        Reveal.initialize({
+          plugins: [ RevealHighlight ]
+        });
+    </script>    
+
+    </body>
+</html>
