@@ -65,3 +65,5 @@ Find the workshops slide below or <a href="slides/index.html" target="_blank">op
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [Introduction to Jekyll Workshop](https://ubc-library-rc.github.io/intro-jekyll/outline/)
 - [Jekyll CheatSheet](https://devhints.io/jekyll)
+- [HTML Tutorial W3School](https://www.w3schools.com/html/)
+- [CSS Tutorial W3School](https://www.w3schools.com/css/)

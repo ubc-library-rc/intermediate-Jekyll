@@ -381,7 +381,7 @@
             <li>About me</li>
             <li>Resume</li>
         </ul>
-        <p style="font-size:80%;">Add a <b>sample.html</b> file in the root directory to show them in <b>{domain}/sample.html</b></p>
+        <p style="font-size:80%;">A <b>sample.html</b> file in the root directory is shown in <b>{domain}/sample.html</b></p>
         <p style="font-size:80%;">You can also add Markdown files to build pages</b></p>
         <aside class="notes">
     </aside>
@@ -435,6 +435,27 @@
         <p style="font-size:80%;">Use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="Jekyll Now">Markdown Cheatsheet</a> for more</p>
     <aside class="notes">
         Markdown is a markup language for creating formatted text using a plain-text editor. There are different Markdown flavours with different capabilities but the main syntax remains unchanged. [Markdown Cheatsheet] gives you a quick reference to the most useful Markdown feature. Here, we review some of them:
+    </aside>
+    </section>
+
+    <section>
+        <h2>HTML & CSS</h2>
+        <p style="font-size:80%;">Two of the core technologies for building webpages</p>
+        <ul style="font-size:70%;">
+            <li>HTML describes the structure of a web page using elements, e.g. </li>
+                <pre><code> <h1 class="page-title">{{ page.title }}</h1> </code></pre>
+            <li>CSS describes the presentation of web pages e.g.</li>
+            <pre><code> 
+              h1 {
+                font-size: 36px;
+              }
+              </code></pre>
+        </ul>
+        <p style="font-size:80%;">CSS files are commonly stored in <b>_sass</b> folder in Jekyll directory</p>
+        <p style="font-size:80%;">You can also add other folders, such as <b>assets</b> to Jekyll directory to organize your files</p>
+    <aside class="notes">
+        Unless you are building a new theme, you do not need to know CSS
+        You need to know basic HTML elements to add or remove elements from a webpage. You can start by searching the skeleton of Jekyll theme to find the right elements.
     </aside>
     </section>
 
@@ -526,7 +547,7 @@ Hello Adam!
 
     <section>
         <h2>Front Matter</h2>
-        <p style="font-size:80%;"> 
+        <p style="font-size:60%;"> 
             It guides Jekyll to parse your Markdown files and put content in the right place
             Use YAML format wrapped between triple-dashed lines.
             Open any of the files in _posts folder
@@ -539,7 +560,7 @@ Hello Adam!
             ---
         </code></pre>
 
-        <p style="font-size:80%;"> 
+        <p style="font-size:60%;"> 
            Now open page.html in the _layout folder:
         </p>
 
@@ -547,7 +568,6 @@ Hello Adam!
             ---
             layout: default
             ---
-            
             <div class="page">
             <h1 class="page-title">{{ page.title }}</h1>
                 {{ content }}
@@ -572,11 +592,11 @@ Hello Adam!
 
         <section>
             <h2>Layouts</h2>
-            <p style="font-size:80%;">Open <b>default.html</b> in <b>_layouts</b> directory:</p>
+            <p style="font-size:70%;">Open <b>default.html</b> in <b>_layouts</b> directory:</p>
             <pre>
-                <img src="./figures/layouts.png" alt="Layout example" height="391" width="387" />
+                <img src="./figures/layouts.png" alt="Layout example" height="391" width="387"/>
             </pre>
-            <p style="font-size:80%;">Later, we will learn how to ask Jekyll to put Markdown content in this layout.</p>
+            <p style="font-size:70%;">Later, we will learn how to ask Jekyll to put Markdown content in this layout.</p>
         <aside class="notes">        
             The file starts with tags that declare the type and language of the file. Here, we are not using Front matter since the file is not inheriting any other layout. The "head" tag is replaced with an include file. We learn more about them in the next section. In the "body" tag, the sidebar is created by another include file. The content will be replaced after interpreting the .md files.
         </aside>
@@ -653,13 +673,12 @@ Hello Adam!
                     <td>files in <b>_posts</b> directory</td>
                 </tr>
                 <tr> 
-                    <td>global variables</td>
-                </tr>
-                <tr> 
                     <td>site.title, site.url</td>
                     <td>page.title, page.date</td>
                 </tr>
               </table>
+              <p style="font-size:60%;">The title in the file name will be stored in <b>.title</b> of <b>site.posts</b> object while the title in the Front matter of the post is stored in <b>page.title</b>.</p>
+
         <aside class="notes">
             When Jekyll processes your site, it looks for data in the Front matter, _config.yml, and _data files to assign values to variables. The data in the Front matter of each page will be stored in page global variable while data in _config.yml is stored in site global variable.
         </aside>
@@ -667,11 +686,11 @@ Hello Adam!
 
         <section>
             <h2>_config.yml</h2>
-            <p style="font-size:80%;">A YAML file with data in the format of <b>key:value</b></p>
+            <p style="font-size:60%;">A YAML file with data in the format of <b>key:value</b></p>
             <pre>
-                <img src="./figures/config.png" alt="config.yml" height="400" />
+                <img src="./figures/config.png" alt="config.yml" height="360" />
             </pre>
-            <p style="font-size:70%;">
+            <p style="font-size:60%;">
             You can also create your own variables by defining them in the <b>Front matter</b> or <b>_config.yml</b> and later using them in Liquid tags.
             </p>
         <aside class="notes">
@@ -735,15 +754,6 @@ Hello Adam!
         <section>
             <h2>Other options</h2>
             <p style="font-size:80%;">Jekyll generates your static site to the <b>_site</b> directory by default. You can transfer the contents of this directory via FTP or any other file transfer method to almost any hosting provider.</p>
-        <aside class="notes">
-        </aside>
-        </section>
-
-        <section>
-            <h2>Jekyll Cheatsheet</h2>
-
-            
-
         <aside class="notes">
         </aside>
         </section>
