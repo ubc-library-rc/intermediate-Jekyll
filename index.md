@@ -56,3 +56,12 @@ Find the workshops slide below or <a href="slides/index.html" target="_blank">op
    <p>Your browser does not support iframes.</p>
  </iframe>
 </div>
+
+
+## More resources
+
+- [Official Jekyll Documentation](https://jekyllrb.com/)
+- [Official Liquid Documentation](https://shopify.github.io/liquid/)
+- [GitHub Pages Documentation](https://docs.github.com/en/pages)
+- [Introduction to Jekyll Workshop](https://ubc-library-rc.github.io/intro-jekyll/outline/)
+- [Jekyll CheatSheet](https://devhints.io/jekyll)
