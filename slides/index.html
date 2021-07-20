@@ -51,11 +51,11 @@
         <h2>Jekyll Intermediate Workshop</h2>
         <h4>Build and customize a website with Jekyll</h4>
         <aside class="notes">
-            Hello everyone, Welcome to this workshop which aims to support you to get familiar with coding environments and
-            setup your personal environment for development of codes. This workshop is built for people who are fairly familiar with coding 
-            but would like to improve their knowledge about the tools and processes that improves their productivity.
-            
-            My name is Shayan Fahimi. I am a PhD student in engineering and ...
+            Hello everyone, Welcome to this workshop on building and customizing a website using Jekyll. 
+            This workshop will guide you to use Jekyll, a powerful static website generator, to build a website on your local machine and serve it on Github pages. In this workshop, we go beyond the material presented in the Introduction to Jekyll workshop, so if you are just starting to learn about making a website, you should absolutely take a look at that workshop as well. Here, we cover the basics but briefly and then explore templates and styles to customize your website using themes, Liquid templating language, and plugins.
+
+            My name is Shayan Fahimi. I am a PhD student in engineering and I started using Jekyll about 3 years ago to write documentation for a project. Since there was little customization in that project and more content development, I did not need to learn the basics of Jekyll then, and Jekyll helped me to develop the content very efficiently. But later, while building my personal website and helping friends I found Jekyll very powerful and straightforward.
+            I try to show you some of those capabilities today.
         </aside>
     </section>
 
@@ -65,7 +65,7 @@
         <span class="fragment"><p>Please take a moment to explore <b><a href="https://www.native-land.ca/" target="_blank">native-land.ca</a></b> so that you can visualize the indigenous territories, languages, and treaties in your area.</p></span>
         <aside class="notes">
             But before going into more details I would like to begin by acknowledging that I am fortunate to present this workshop in Burnaby which is the unceded territory of the Coast Salish People.
-            Please take a moment to explore this website and learn more about the land you are located now. 
+            I would like to ask you to also take a moment to explore this website and learn more about the land you are currently using and its historys. 
         </aside>
     </section>
 
@@ -77,8 +77,8 @@
             <li>Introduction</li>
             <li>Installation</li>
             <li>Building a Website</li>
-            <li>Site Structure</li>
             <li>Blogging</li>
+            <li>Site Structure</li>
             <li>Jekyll Plugins</li>
             <li>Serving</li>
         </ul>
@@ -87,9 +87,15 @@
             Then, we talk about Jekyll and review the installation process.
             After installing Jekyll on your local machine, you have a few choices to build your first website. 
             We go over these choices and use one of them to build a website and explain the directory structure 
-            in Jekyll. We talk about themes, Liquid language, layouts and includes and briefly introduce CSS.
-            Then, we talk about blogging in Jekyll and plugins that extend Jekyll built-in capabilities. 
+            in Jekyll. We talk about Jekyll built in capabilities for blogging and we explores themes, Liquid language, layouts and includes.
+
+            In this workshop we are not going to talk about HTML or CSS, but those are the basics of web development and you need to be familiar with them
+            for more serious web development projects.
+
+            Then, we talk about plugins that extend Jekyll built-in capabilities. 
             Finally, we learn about serving the website online using GitHub or other web hosting services.
+
+            I just send you some links to workshop content and slides. All of the content is available online.
         </aside>
     </section>
 
@@ -101,9 +107,13 @@
 
         <p style="font-size:60%;"> Use the chat box and let us know your goal for attending this workshop.</p>
         <aside class="notes">
-            You can use Jekyll to build an academic website and showcase your projects, resume, or your hobbies
-            or build a personal website or a website that supports your projects and provide documentation or
-            examples. Please use the chat box to write your goal for attending this workshop.
+            You can use Jekyll to build differnt types of websites. You can build an academic website and showcase your projects, resume, or your hobbies
+            You can build a personal website or a website that supports your projects and provide documentation or
+            examples. Please use the chat box to write your goal for attending this workshop and also let me know if you have already installed Jekyll on your
+            system using the instruction on workshop page or Jekyll documentation. 
+            
+            If you have not installed Jekyll on your system, that is fine and you can still benefit from attending this workshop. However, you probably cannot 
+            try some of the activities on your system.
         </aside>
     </section>
 
@@ -116,15 +126,22 @@
         <span class="fragment" style="font-size:80%;"><p>Fully integrated with GitHub</p></span>
         <aside class="notes">
             Jekyll is a popular website generator based on Ruby, which is designed to build static websites. Jekyll is developed by Tom Preston-Werner. Jekyll is fully integrated with GitHub and can be hosted for free on GitHub Pages. 
-            Jekyll takes a template directory and runs it through two converters, Textile and Liquid. The result is a complete static website, a bunch of HTML and CSS files, ready to be served.
+            Jekyll takes a template directory and runs it through two converters, Markdown and Liquid. The result is a complete static website, a bunch of HTML and CSS files, ready to be served online.
             </aside>
     </section>
 
     <section>
         <h2>Static vs Dynamic</h2>
         <aside class="notes">
+            What is a static website and do we have any other types of websites?
             Website generators are divided into two categories: Dynamic and Static. Static pages are pre-rendered, cached, and delivered to the user via a content delivery network (CDN). On the other hand, Dynamic pages are generated in real time when the user sends the request.
-            Static websites are easier for the web browser to load and are great choices for personal blogs, academic websites, or simple business websites. They eliminate the complexity of creating and working with databases and do not have any unnecessary overhead.
+            Dynamic websites are created and managed by a content management system that is installed on the Host, such as Drupal or Wordpress.
+
+            For example, consider Facebook. The landing page is different anytime you open the website and it depends on activities of the user and his/her friends.
+
+            Static websites are easier for the web browser to load and are great choices for personal blogs, academic websites, or simple business websites. They eliminate the complexity of creating and working with databases and do not have any unnecessary overhead. They are more secure
+            since we are not using any databases and no query means a faster page-loading time. 
+            You can even write a static website all by hand but we usually offload some of this work to website generators.
             To use static website generators, you are generally expected to use code-editors to build your website. Also, knowing a bit of CSS and HTML can help you to customize a theme for your website. 
         </aside>
     </section>
@@ -148,8 +165,12 @@
         </ul>
         <aside class="notes">
             Static website are great options for publishing exactly all stored content to all users. Most of the static website generators use a templating language to build the layout of the
-            website. Also, they use a lightweight markup language to support the creators write any contents without any special software or online tool. 
-            Website 
+            website, removing the need to repeat tasks over numerous webpages. Also, they use a lightweight markup language to support the creators write any contents without any special software or online tool.
+            
+            Static Website generators take templates and combines them with specific information, content of a blog post, to generate full HTML pages for website visitors to see.
+
+            Note that when we use Jekyll to build a website, Jekyll is not actually running the live website, like wordpress. It helps us create the static site files and we can host them like any other
+            HTML website.
         </aside>
     </section>
 
@@ -159,10 +180,14 @@
         <p style="font-size:60%;"> If you have not installed it on your system, please click on the link: </p>
         <p><a href="https://ubc-library-rc.github.io/intermediate-Jekyll/content/02.Installation.html" target="installation">Installation</a></p>
         <aside class="notes">
+            Now that we learned about static websites and the reasons to use them, let take the first step, Jekyll installation
+
             If you only want to try Jekyll, you do not need to install it on your system. You can fork Jekyll now on GitHub and change some configuration to serve your website on GitHub pages. 
             You can even use GitHub GUI to write blog posts. This is all covered in the introduction to Jekyll workshop.
-            However, you cannot go further. Each tiny change needs to be committed on GitHub to show up in your website and you need to wait several minutes for GitHub to compile your codes
+            However, you cannot go further than that. Each tiny change needs to be committed on GitHub to show up in your website and you need to wait several minutes for GitHub to compile your codes
             and update the website. Thus, you need to install Jekyll locally to accelerate development.
+
+            If you have not installed Jekyll yet, I am going to cover the installation briefly here. You can find a complete walkthrough in this link.
         </aside>
     </section>
 
@@ -181,7 +206,14 @@
         </code></pre>
         <p style="font-size:60%;"> You can still learn about Jekyll structure and tools without a running version on your system. </p>
         <aside class="notes">
+            
             To install Jekyll on your system, first, you need to install two other programs. Jekyll is written in Ruby, an interpreted, high-level, general-purpose programming language. Therefore, you need to install it to run Jekyll and maintain your Jekyll website. Another program is RubyGems, which is a package manager for the Ruby programming language.
+        
+            Jekyll is not officially supported by Windows, so it is recommended to use WSL to install Jekyll if you have windows 10. You can also use Ruby installer.
+            
+            I want to invite you to follow Jekyll installation tutorial based on your operating system and if you have it already installed, try jekyll -v command to check the installation.
+
+            Again ...
         </aside>
     </section>
 
@@ -198,8 +230,15 @@
         <img src="./figures/JekyllNow.png" alt="Download Jekyll Now" height="250" />
         
         <aside class="notes">
-            You can build a new boilerplate website with a default gem-based theme by navigating to somewhere you would like to create your first project and running
-            If you do not have Jekyll on your local machine, just download Jekyll Now zip file and lets take a look at the files
+            <p>
+                You can build a new boilerplate website with a default gem-based theme by navigating to a directory you would like to create your first project in and running
+            </p>
+            <p>
+                Jekyll will produce a bunch of HTML files in that directory and you can use jekyll serve to run the server locally. Jekyll serve the website on port 4000 of localhost.
+            </p>
+            <p>
+                If you do not have Jekyll on your local machine, just download Jekyll Now zip file and lets take a look at the files
+            </p>
         </aside>
     </section>  
 
@@ -218,9 +257,17 @@
         <p style="font-size:80%;">Other directories are kept as a gem in the Gemfile.</p>
         
         <aside class="notes">
-            If you compare the files in Jekyll Now built on your local machine with the GitHub version, you will find that a few directories are missing.
-            Its because new version of Jekyll now uses bundler to wrap the theme in the Gemfile. If you open Gemfile, you will find that a theme called 
-            Minima is used in Jekyll Now
+            <p>
+                Jekyll Now is the default website configuration that Jekyll builds right now.
+            </p>
+            <p>
+                If those of you who built a new website locally compare the files in Jekyll Now built on your local machine with the GitHub version, you will find that a few directories are missing.
+                Its because new version of Jekyll now uses bundler to wrap the theme in the Gemfile. If you open Gemfile on the right side, you will find that a theme called 
+                Minima is used in Jekyll Now
+            </p>
+            <p>
+                So what is a bundler? what is a gemfile? Those concepts are coming from Ruby
+            </p>
         </aside>
     </section>
 
@@ -235,11 +282,19 @@
             $ gem install bundler
             $ bundle exec jekyll serve
         </code></pre>
-        <p style="font-size:60%;"></p>
+
+        <p style="font-size:60%;">If you want to stop serving your website locally, use Ctrl + C.</p>
         <aside class="notes">
-            If you have a Gemfile in the directory of the theme you found, you need to use Bundler to install all the gems before serving the website. Jekyll bundler is a gem that ensures compatibility of all the plugins across different environments with Jekyll installed on your system. You need to install Bundler after installing Jekyll:
-            Jekyll monitors the project folder and rebuilds your website anytime you make a change. If you want to stop serving your website locally, use Ctrl + C.
-            Instead of creating a new website using jekyll new, you can also clone a theme developed by community and use it as an star to your local machine and serve it there. We will learn more about that in Themes.
+            <p>
+                If you have a Gemfile in the directory of a Jekyll theme, you need to use Bundler to install all the gems before serving the website. Ruby gems are used to distribute functionalities among different sysem structures. Jekyll bundler is a gem that ensures compatibility of all the plugins across different environments with Jekyll installed on your system. You need to install Bundler after installing Jekyll
+                Then, you need to use bundle exec jekyll serve first time you serve the website. It tells jekyll to process plugins as well as website directory. Then, you will be able to open your website on port 4000 of local host.
+            </p>
+            <p>
+                If you want to stop serving your website locally, use Ctrl + C.
+            </p>
+            <p>
+                Instead of creating a new website using jekyll new, you can also clone a theme developed by community and use it as an start. If the theme comes with a Gemfile, you need to use bundler to serve it for the first time.
+            </p>
         </aside>
     </section>  
 
@@ -258,7 +313,7 @@
             <img class="r-frame" src="./figures/mediumish-jekyll-theme.webp"/ height="250"/>
         </div>
         <aside class="notes">
-            Jekyll themes provide community-maintained templates and slides for users to build their websites. While the basic Minima theme is very robust, you can choose themes from many free resources, such as:
+            Jekyll themes provide community-maintained templates and styles for users to build their websites. While the basic Minima theme is very robust, you can choose themes from many free resources and themes are available for different purposes.
         </aside> 
     </section> 
 
@@ -275,29 +330,41 @@
 
         <p>Check these websites and find a theme. </p>
         <br> 
-        <p style="font-size:80%;">If you are not sure, use Hyde: <a href="https://jekyll-themes.com/free/" target="Hyde">https://github.com/poole/hyde</a></p>
-        <p style="font-size:80%;">or Jekyll Now: <a href="https://jekyll-themes.com/free/" target="Jekyll Now">https://github.com/poole/hyde</a></p>
-
+       
         <aside class="notes">
-            You can clone or fork the themes available on GitHub. For other themes, you need to download and unzip them on your local machine. Then, serve it using Jekyll. Remember that you need to install the gems used by third-party themes before serving them by running bundle exec jekyll serve the first time you serve them on your local machine.
-            If you are interested to use themes other than [Minima], Hyde is a simple, two-column, and uncomplicated theme. We will use this theme for the rest of this workshop to demonstrate different tools and capabilities of Jekyll.
+            <p>
+                For the first activity, please find a Jekyll theme you like from one of these websites. You can clone or fork the themes available on GitHub. For other themes, you need to download and unzip them on your local machine. Then, serve it using Jekyll. 
+            </p>
+            <p>
+                Remember that you need to install the gems used by third-party themes before serving them by running bundle exec jekyll serve the first time you serve them on your local machine.
+            </p>
         </aside> 
     </section> 
 
-
-
     <section>
         <h2>Hyde</h2>
-        <img src="./figures/hyde-jekyll-theme.webp"  height="336" width="528">
-        <p style="font-size:90%;">We will use this theme to learn about other features of Jekyll. </p> 
+        <p style="font-size:80%;">If you are not sure, use Hyde: <a href="https://github.com/poole/hyde" target="Hyde">https://github.com/poole/hyde</a></p>
+        <p style="font-size:80%;">or Jekyll Now: <a href="https://github.com/barryclark/jekyll-now" target="Jekyll Now">https://github.com/barryclark/jekyll-now</a></p>   
+        <img src="./figures/hyde-jekyll-theme.webp"  height="300">
+        <p style="font-size:80%;">We will use this theme to learn about other features of Jekyll. </p> 
         <p style="font-size:70%;">The concepts work in other themes.</p>
+        <aside class="notes">
+            <p>
+                If you are interested to use themes other than [Minima], Hyde is a simple, two-column, and uncomplicated theme. We will use this theme for the rest of this workshop to demonstrate different tools and capabilities of Jekyll.
+                Remember to download Jekyll now from Github since that version has no hidden directory.
+            </p>
+            <p>
+                The concepts work in other themes as well so if you chose any other theme, that is absolutely fine
+            </p>
+        </aside>
     </section> 
 
     <section data-background="#002145">
         <h2>Site Structure</h2>
 
         <aside class="notes">
-            The biggest difference between site generators is the tools and capabilities they offer to write, publish, and monitor your content in the desired style. Jekyll has a standard structure to find the content of your website and display them properly. The information here is from official Jekyll documentation](https://jekyllrb.com/docs/). A basic Jekyll website usually has the following directory structure:
+            Lets dive into the site structure
+            The biggest difference between site generators is the tools and capabilities they offer to write, publish, and monitor your content. Jekyll has a standard structure to find the content of your website and put them in the right location. A Jekyll website usually has the following directory structure:
         </aside>
     </section> 
 
@@ -336,40 +403,58 @@
     </pre>
 
         <aside class="notes">
-            _config.yml stores configuration data of your site including the site’s title, logo, description, admin’s email and much more. You can also specify information such as Twitter handler and Google Analytics code and later recall them dynamically in other site pages.
-
-            _data can be populated with well-formatted data files (such as YAML .yml files) and access later in the site.data variable. For example, you can write your resume here and regularly update it.
-
-            _drafts is where you can keep draft posts. These posts follow the same format as your published posts. When they are ready to be published, you can easily drag and drop them into _posts folder.
-
+            <p>
+            _config.yml is a file that stores configuration data of your site including the site’s title, logo, description, admin’s email and much more. You can also specify information such as Twitter handler and Google Analytics code and later recall them wherever you need in other site pages.
+            </p>
+            <p>
+            _data can be populated with well-formatted data files (such as YAML .yml files) and access later in the site.data variable. For example, you can write your resume here and regularly update just this file.
+            </p>
+            <p>
+            _drafts is where you can keep draft posts. These posts follow the same format as your published posts. When they are ready to be published, you can easily drag and drop them into _posts folder, which stores the published posts.
+            </p>
+            <p>
             _includes contains reusable content that can be mixed and matched by your layout and posts, such as the footer and header of your site.
-
-            _layouts are templates that wrap your website’s posts. You can build different templates for different parts of your website. In the layouts, you can specify the position of your content and the look of the webpage.
-
-            _posts contains all of your posts usually in Markdown format. You can customize the permanent link for each post but is retrieved from the name of the files by default. The naming convention of these files is important and must follow the format: YEAR-MONTH-DAY-title.md.
-
-            _sass includes .sass files, an extension of CSS files, used to format the layout of webpages. These files are later processed into main.css and define the style of your site, such as the size, type, and colour of fonts in each webpage.
-
-            _site is the directory that contains all the files generated by Jekyll. You should not add any files to this directory or delete them from it. You also do not need to sync this directory on GitHub. If you are serving your website on other hosts, you only need to copy the files in this folder to the webserver and you are done. Any files such as CSS, JS, and images will also end up here in an assets folder.
-
+            </p>
+            _layouts are templates that wrap your website’s pages or posts. You can build different templates for different parts of your website. It is like the skeleton without any content, any muscle.
+            </p>
+            <p>
+            _posts contains all of your posts usually in Markdown format. The naming convention of these files is important and must follow the format: YEAR-MONTH-DAY-title.md.
+            </p>
+            <p>
+            _site is the directory that contains all the files generated by Jekyll. You should not add any files to this directory or delete them from it. You also do not need to sync this directory on GitHub or any other version control as they are built each time you run jekyll. If you are serving your website on other hosts, you only need to copy the files in this folder to the webserver and you are done.
+            </p>
+            <p>
+            You can also create other directories to organize the files you have. 
+            _sass includes .sass files, an extension of CSS files, used to format the layout of webpages. You can also put an assets folder that contains images or pdf files.
+            </p>
+            <p>
             .jekyll-cache and .jekyll-metadata are hidden folders that contain a cache of the generated pages for faster serving and keeps track of the files created by Jekyll and the one that has been modified since the site was last built. You do not need to modify these files or sync them on GitHub.
-
-            404.html is the HTML file that will be shown when they are directed to a page on your site that does not exist.
-
-            Gemfile and Gemfile.lock stores all of the gem dependencies for your site.
-
+            </p>
+            <p>
+            Then you have some static pages in the root directory.
             index.html or index.md is the default landing page of your site.
-
-            .gitignore contains instructions for your source control system to ignore files/folders. You need to add the following addresses to gitignore:
+            404.html is the HTML file that will be shown when they are directed to a page on your site that does not exist.
+            </p>
+            <p>
+            Gemfile and Gemfile.lock stores all of the gem dependencies for your site.
+            .gitignore contains instructions for your source control system to ignore files/folders.
+            </p>
+            <p>
+                While this might look like a complex structure, it helps you and Jekyll to find the right files quickly and maintain your website more efficiently.
+                Lets see how
+            </p>
         </aside>
 
     </section> 
-
     
     <section data-background="#002145">
         <h2>Blogging</h2>
         <p style="font-size:80%;">Jekyll has built-in features for blogging</p>
     <aside class="notes">
+        <p>
+            Jekyll is built for blogging. That is why it has a _posts folder and built-in features for parsing your posts and showing them properly on the screen
+            We have two types of webpages in Jekyll
+        </p>
     </aside>
     </section>
 
@@ -384,21 +469,31 @@
         <p style="font-size:80%;">A <b>sample.html</b> file in the root directory is shown in <b>{domain}/sample.html</b></p>
         <p style="font-size:80%;">You can also add Markdown files to build pages</b></p>
         <aside class="notes">
-    </aside>
+            <p>
+                The first type is pages. They are standalone content with no dates and can be used for a landing page, a resume page, or an about me page.
+                If you make an html or markdown file such as sample.html in the root directory, it will be shown on domain slash sample.html on your website. 
+            </p>
+        </aside>
     </section>
 
     <section>
         <h2>Posts</h2>
         <ul style="font-size:80%;">
             <li>Jekyll solution for blogging</li>
-            <li>The best practice is to use Markdown to write pages but you can also use HTML</li>
+            <li>The best practice is to use Markdown to write posts but you can also use HTML</li>
             <li>Starts with <b>Front matter</b></li>
             <li>A valid post name must be in the format <b>[year]-[month]-[day]-[post-name].md</b></li>
         </ul>
 
         <img class="r-frame" src="./figures/posts.png"/ height="250"/>
     <aside class="notes">
-        The _posts folder is embedded in Jekyll to contain the blog posts of your site. The best practice is to use Markdown to write pages but you can also use HTML. The beginning of each post should include proper Front matter to show Jekyll that the .md file should be processed as a new post. A valid post name must be in the format [year]-[month]-[day]-[post-name].md
+        <p>
+        The second type is posts. It is Jekyll solution for blogging. 
+        </p>
+        <p>
+        The _posts folder is embedded in Jekyll to contain the blog posts of your site. The best practice is to use Markdown to write posts but you can also use HTML. The beginning of each post should include proper Front matter to show Jekyll that the .md file should be processed as a new post. A valid post name must be in the format [year]-[month]-[day]-[post-name].md
+        We will talk more about front matter today, but for now, it is that part inside the blue box.
+        </p>
     </aside>
     </section>
 
@@ -406,7 +501,7 @@
         <h2>Markdown</h2>
         <p style="font-size:80%;">A markup language for creating formatted text using a plain-text editor</p>
         <ul style="font-size:80%;">
-            <li>Header: 
+            <li>Headings: 
                 <ul style="font-size:70%;">
                     <li># H1</li>
                     <li>## H2</li>
@@ -434,7 +529,12 @@
         <br>
         <p style="font-size:80%;">Use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="Jekyll Now">Markdown Cheatsheet</a> for more</p>
     <aside class="notes">
-        Markdown is a markup language for creating formatted text using a plain-text editor. There are different Markdown flavours with different capabilities but the main syntax remains unchanged. [Markdown Cheatsheet] gives you a quick reference to the most useful Markdown feature. Here, we review some of them:
+        <p>
+        Posts should be formatted in Markdown which is a markup language for creating formatted text using a plain-text editors. There are different Markdown flavours with different capabilities but the main syntax remains unchanged. Lets look at the syntax.
+        </p>
+        <p>
+            You can put headings and subheadings, you can make part of the sentence bold or italic by wraping them in double or single astricks. and you can add links or images.
+        </p>
     </aside>
     </section>
 
@@ -452,10 +552,18 @@
               </code></pre>
         </ul>
         <p style="font-size:80%;">CSS files are commonly stored in <b>_sass</b> folder in Jekyll directory</p>
-        <p style="font-size:80%;">You can also add other folders, such as <b>assets</b> to Jekyll directory to organize your files</p>
     <aside class="notes">
+        <p>
+        When using Jekyll, you probably need to know a bit of HTML and CSS.
+        These are the two core technologies for building web pages
+        </p>
+        <p>
+            you define all the styles in one file and use those styles over your website.
+        </p>
+        <p>
         Unless you are building a new theme, you do not need to know CSS
-        You need to know basic HTML elements to add or remove elements from a webpage. You can start by searching the skeleton of Jekyll theme to find the right elements.
+        You need to know basic HTML elements to add or remove elements from a webpage. You can start by searching the skeleton of Jekyll theme to find the right elements and manipulating them to reach the desired outcome.
+        </p>
     </aside>
     </section>
 
@@ -473,7 +581,15 @@
             </ul>
             <img class="r-frame" src="./figures/posts.png"/ height="250"/>
     <aside class="notes">
-        The _posts folder is embedded in Jekyll to contain the blog posts of your site. The best practice is to use Markdown to write pages but you can also use HTML. The beginning of each post should include proper Front matter to show Jekyll that the .md file should be processed as a new post. A valid post name must be in the format [year]-[month]-[day]-[post-name].md
+        <p>
+        In the second activity, you are going to open posts folder in the theme you selected and study the content of the sample posts in that directory.
+        What information do you have in the front matter?
+        What markdown elements you can recognize?
+        </p>
+        <p>
+        Then, write a new post by duplicating the old post, renaming it following the naming conventions
+        change the front values such as the title of your post and use markdown elements
+        </p>
     </aside>
     </section>
 
@@ -487,7 +603,8 @@
             <li>Liquid Filters</li>
         </ul>
         <aside class="notes">
-            Front matter is part of a templating language called Liquid. Jekyll uses Liquid templating language to process your site’s pages. Liquid follows simple templating rules and helps you to add logic or supplemental content to your simple HTML or Markdown pages. To use Liquid in HTML or Markdown pages, you need to add “Front matter” notation.
+            You already saw Front matter.
+            Front matter is part of a templating language called Liquid. Jekyll uses Liquid templating language to process your site’s pages. To use Liquid in HTML or Markdown pages, you need to add “Front matter” notation at the beginning of your files. Liquid follows simple templating elements such as liquid objects tags and filter and helps you to add logic or supplemental content to your simple HTML or Markdown pages. 
         </aside>
     </section> 
 
@@ -497,20 +614,28 @@
         <p style="font-size:80%;"> To output content into a page, two curly braces are used e.g. </p>
         <br>
 
-        <pre><code data-trim data-noescape>{{ page.title }} </code></pre>
+        <pre><code data-trim data-noescape>{{ site.title }} </code></pre>
 
         <pre>
 
-Introduction
+Jekyll Workshop
         </pre>
         <aside class="notes">
-            In this case, Liquid is rendering the content of the title property of the page object, which contains the text Introduction.
+            <p>
+            Assume that you want to show your website title on each page and it might change over time. You can store it in a Liquid variable and then use 
+            liquid objects to display them on a page.
+            To do that, you wrap the variable in two curly braces 
+            </p>
+            <p>
+            In this case, Liquid is rendering the content of the title property of the site object, which contains the text Jekyll Workshop.
+            You can build and populate variables by putting them in front matter or config file.
+            </p>
         </aside>
     </section> 
 
     <section>
         <h2>Liquid Tags</h2>
-        <p style="font-size:80%;">Tags create the logic and control flow for templates.</p>
+        <p style="font-size:80%;">Tags create programming logic and control flow for templates.</p>
         <p style="font-size:80%;">To perform logic statements or run a loop, curly braces are used with a percentage sign on each side e.g. </p>  
         
         <pre><code data-trim data-noescape>
@@ -525,7 +650,8 @@ Hello Adam!
         </pre>
 
         <aside class="notes">
-            Jekyll uses the Liquid templating language to process your site’s pages. Liquid follows simple templating rules and helps you to add logic or supplemental content to your simple HTML or Markdown pages. To use Liquid in HTML or Markdown pages, you need to add “Front matter” notation.
+            For example, in this if statement, if the user object exists, a message with the user name will be shown on the screen.
+
         </aside>
 
     </section> 
@@ -543,16 +669,21 @@ Hello Adam!
 
 39
         </pre>
+        <aside class="notes">
+           We separate filters and variables with a pipe sign. There are many filters available in liquid. For example, size shows the number of characters in a string.
+        </aside>
     </section> 
 
     <section>
         <h2>Front Matter</h2>
+        <ul style="font-size:60%;">
+            <li>It guides Jekyll to parse your Markdown files and put content in the right place</li>
+            <li>Use YAML format wrapped between triple-dashed lines</li>
+        </ul>
+        <br>
         <p style="font-size:60%;"> 
-            It guides Jekyll to parse your Markdown files and put content in the right place
-            Use YAML format wrapped between triple-dashed lines.
-            Open any of the files in _posts folder
-        </p>
-
+            Open any of the files in <b>_posts</b> directory:
+         </p> 
         <pre><code data-trim data-noescape>
             ---
             layout: post
@@ -561,7 +692,7 @@ Hello Adam!
         </code></pre>
 
         <p style="font-size:60%;"> 
-           Now open page.html in the _layout folder:
+           Now open page.html in the <b>_layout</b> directory:
         </p>
 
         <pre><code>
@@ -575,7 +706,15 @@ Hello Adam!
         </code></pre>
 
         <aside class="notes">
-            Front matter contains information about your webpage. Front matter must take the format of valid YAML or JSON wrapped between triple-dashed lines. When Jekyll finds this information in your files, it processes them differently. The front matter must be the first thing in your file.
+            <p>
+                Front matter guides Jekyll to parse your Markdown files and put content in the right place and contains information about your webpage. Front matter must take the format of valid YAML or JSON wrapped between triple-dashed lines. When Jekyll finds this information in your files, it processes them differently. The front matter must be the first thing in your file.
+            </p>
+            <p>
+                For example, if you open any files in the posts directory you will see a front matter like this. when Jekyll parse a post, it finds the layout of the post and the title and populate variables page.layout and page.title 
+                Now, if you open the layout for this post, you can see the variable page.title previously being populated by Jekyll is shown at the top.
+                Also, you can see content, which is another global variable and contains all the content of a webpage parsed using the markdown file.
+                what is this layout then?
+            </p>
         </aside>
         </section> 
 
@@ -586,7 +725,8 @@ Hello Adam!
             </div>
             <p style="font-size:70%;"> Jekyll later fills each section with the content of Markdown files, following the instructions of Front matter.</p>
         <aside class="notes">
-            When browsing a website, many sections stay the same across multiple pages. Layouts in Jekyll give you an easy solution to build an HTML file and use it across your website. You have seen one of them just in the previous section.
+            When browsing a website, many sections stay the same across multiple pages. Layouts in Jekyll give you an easy solution to use an html file across your website and fill it with different contents. You have seen one of them just in the previous section. Jekyll uses that 
+            layout, fills it with the contents of your posts and generates different html files for each post.
         </aside>
         </section>
 
@@ -597,8 +737,15 @@ Hello Adam!
                 <img src="./figures/layouts.png" alt="Layout example" height="391" width="387"/>
             </pre>
             <p style="font-size:70%;">Later, we will learn how to ask Jekyll to put Markdown content in this layout.</p>
-        <aside class="notes">        
-            The file starts with tags that declare the type and language of the file. Here, we are not using Front matter since the file is not inheriting any other layout. The "head" tag is replaced with an include file. We learn more about them in the next section. In the "body" tag, the sidebar is created by another include file. The content will be replaced after interpreting the .md files.
+        <aside class="notes"> 
+            <p>
+            Lets look at another example: 
+            In Jekyll Now it looks like this. You will see similar structure in other themes as well.       
+            The file starts with elements that declare the type and language of the file. Here, we are not using Front matter since the file is not inheriting any other layouts. The "head" element of the html file is replaced with an include file. We learn more about them in the next section. In the "body" element, the sidebar is created by another include file. The content will be replaced after interpreting the .md files.
+            </p>
+            <p>
+            Layouts can inherit the structure of other layouts and build on top of them. For example, page.html layout inherits default layouts and adds its content on the right place.
+            </p> 
         </aside>
         </section>
 
@@ -627,6 +774,7 @@ Hello Adam!
             </pre>
 
         <aside class="notes">
+            Lets look at the content of head.html file which default used. 
             The content of this file replaces the head section of all HTML files in Hyde. In the title section, you can find a conditional statement that changes the value in title tag based on your location on the website.
         </aside>
         </section>
@@ -680,7 +828,15 @@ Hello Adam!
               <p style="font-size:60%;">The title in the file name will be stored in <b>.title</b> of <b>site.posts</b> object while the title in the Front matter of the post is stored in <b>page.title</b>.</p>
 
         <aside class="notes">
+            <p>
+            So you have already seen lots of Jekyll variables.
             When Jekyll processes your site, it looks for data in the Front matter, _config.yml, and _data files to assign values to variables. The data in the Front matter of each page will be stored in page global variable while data in _config.yml is stored in site global variable.
+            So site.title contains your site title and is created using config file while page.title contains the title of each page and is filled using the front matter.
+            </p>
+            <p>
+            There are many other standard variables that Jekyll builds and you can find a list of them in Jekyll documentation. One of the most important objects is site.posts that has the content of all of your posts. The title handle for this object is filled using the file names instead of 
+            the data in front matter.
+        </p>
         </aside>
         </section>
 
@@ -694,6 +850,8 @@ Hello Adam!
             You can also create your own variables by defining them in the <b>Front matter</b> or <b>_config.yml</b> and later using them in Liquid tags.
             </p>
         <aside class="notes">
+            and finally lets look at a config file. A standard config has the settings and some website information such as the title, url, authors name and so on.
+            and like front matter, it has a key:value structure.
         </aside>
         </section>
 
@@ -711,7 +869,7 @@ Hello Adam!
             <p style="font-size:70%;">Jekyll plugins extend the capabilities of Jekyll</p>
 
             <ul style="font-size:70%;">
-                <li><a href="https://github.com/i nukshuk/jekyll-scholar" target="Jekyll-schoar">Jekyll-schoar</a> is for the academic blogger to format the bibliographies and reading lists for the web.</li>
+                <li><a href="https://github.com/i nukshuk/jekyll-scholar" target="Jekyll-schoar">Jekyll-scholar</a> is for the academic blogger to format the bibliographies and reading lists for the web.</li>
                 <li><a href="https://github.com/rbuchberger/jekyll_picture_tag" target="Jekyll Picture Tag">Jekyll Picture Tag</a> automates the process of making your figures across all different browsers and devices.</li>
                 <li><a href="https://github.com/jekyll/jekyll-feed" target="Jekyll Feed plugin">Jekyll Feed plugin</a> generates an RSS-like feer of your Jekyll posts.</li>
                 <li><a href="https://github.com/jekyll/jekyll-sitemap" target="Jekyll Sitemap Generator Plugin">Jekyll Sitemap Generator Plugin</a> silently generates a sitemaps.org compliant sitemap for your Jekyll site.</li>

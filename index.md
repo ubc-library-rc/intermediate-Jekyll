@@ -33,11 +33,15 @@ By the end of this workshop, you will be able to:
 ## Schedule
 
 | 0:00 | Welcome and using Zoom|
-| 0:05 | Introduction |  
-| 0:15 | Installing Jekyll, directory structure, themes and templates |
-| 0:30 | First exercise + Troubleshooting |   
-| 1:00 | Writing posts, Liquid language, variables |
-| 1:15 | Domains, serving on GitHub |
+| 0:05 | Introduction and Installing Jekyll|  
+| 0:15 | Build a simple website + Themes |
+| 0:20 | Activity 1 - Choose a theme |
+| 0:30 | Site Structure and Blogging |   
+| 0:40 | Activity 2 - Write a Post | 
+| 0:50 | Liquid Templating Language |   
+| 1:00 | Activity 3 |
+| 1:20 | Serving and Deployment |
+| 1:30 | Q&A and Troubleshooting |
 
 ## Slides
 
