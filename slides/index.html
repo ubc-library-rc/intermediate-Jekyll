@@ -51,21 +51,24 @@
         <h2>Jekyll Intermediate Workshop</h2>
         <h4>Build and customize a website with Jekyll</h4>
         <aside class="notes">
+            <p>
             Hello everyone, Welcome to this workshop on building and customizing a website using Jekyll. 
             This workshop will guide you to use Jekyll, a powerful static website generator, to build a website on your local machine and serve it on Github pages. In this workshop, we go beyond the material presented in the Introduction to Jekyll workshop, so if you are just starting to learn about making a website, you should absolutely take a look at that workshop as well. Here, we cover the basics but briefly and then explore templates and styles to customize your website using themes, Liquid templating language, and plugins.
-
+            </p>
+            <p>
             My name is Shayan Fahimi. I am a PhD student in engineering and I started using Jekyll about 3 years ago to write documentation for a project. Since there was little customization in that project and more content development, I did not need to learn the basics of Jekyll then, and Jekyll helped me to develop the content very efficiently. But later, while building my personal website and helping friends I found Jekyll very powerful and straightforward.
             I try to show you some of those capabilities today.
+            </p>
         </aside>
     </section>
 
     <section style="text-align: left;">
         <h3>Land Acknowledgement</h3>
-        <p> UBC Vancouver is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam), səl̓ilwətaɁɬ təməxʷ (Tsleil-Waututh), Stz’uminus, S’ólh Téméxw (Stó:lō), Skwxwú7mesh-ulh Temíx̱w (Squamish), and Coast Salish peoples.</p>
-        <span class="fragment"><p>Please take a moment to explore <b><a href="https://www.native-land.ca/" target="_blank">native-land.ca</a></b> so that you can visualize the indigenous territories, languages, and treaties in your area.</p></span>
+        <p style="font-size:80%;"> UBC Vancouver is located on the traditional, ancestral, and unceded territory of the xʷməθkʷəy̓əm (Musqueam), səl̓ilwətaɁɬ təməxʷ (Tsleil-Waututh), Stz’uminus, S’ólh Téméxw (Stó:lō), Skwxwú7mesh-ulh Temíx̱w (Squamish), and Coast Salish peoples.</p>
+        <p style="font-size:80%;">Please take a moment to explore <b><a href="https://www.native-land.ca/" target="_blank">native-land.ca</a></b> so that you can visualize the indigenous territories, languages, and treaties in your area.</p>
         <aside class="notes">
             But before going into more details I would like to begin by acknowledging that I am fortunate to present this workshop in Burnaby which is the unceded territory of the Coast Salish People.
-            I would like to ask you to also take a moment to explore this website and learn more about the land you are currently using and its historys. 
+            I would like to ask you to also take a moment to explore this website and use the chat to share where you are coming from.
         </aside>
     </section>
 
@@ -83,19 +86,24 @@
             <li>Serving</li>
         </ul>
         <aside class="notes">
+            <p>
             This workshop is about building websites and we start by asking about your reasons for attending this workshop.
             Then, we talk about Jekyll and review the installation process.
             After installing Jekyll on your local machine, you have a few choices to build your first website. 
             We go over these choices and use one of them to build a website and explain the directory structure 
             in Jekyll. We talk about Jekyll built in capabilities for blogging and we explores themes, Liquid language, layouts and includes.
-
-            In this workshop we are not going to talk about HTML or CSS, but those are the basics of web development and you need to be familiar with them
-            for more serious web development projects.
-
+            </p>
+            <p>
+            In this workshop we are going to talk about HTML or CSS very briefly, but those are the cores technologies for web development and you need to be familiar with them
+            for more serious web development projects. You can find some links in the workshop outline.
+            </p>
+            <p>
             Then, we talk about plugins that extend Jekyll built-in capabilities. 
             Finally, we learn about serving the website online using GitHub or other web hosting services.
-
+            </p>
+            <p>
             I just send you some links to workshop content and slides. All of the content is available online.
+            </p>
         </aside>
     </section>
 
@@ -105,22 +113,32 @@
         <br>
         <br>
 
-        <p style="font-size:60%;"> Use the chat box and let us know your goal for attending this workshop.</p>
+        <p style="font-size:60%;"> Use the chat box and share your goals for attending this workshop.</p>
         <aside class="notes">
+            <p>
             You can use Jekyll to build differnt types of websites. You can build an academic website and showcase your projects, resume, or your hobbies
             You can build a personal website or a website that supports your projects and provide documentation or
             examples. Please use the chat box to write your goal for attending this workshop and also let me know if you have already installed Jekyll on your
             system using the instruction on workshop page or Jekyll documentation. 
-            
+            </p>
+            <p>
+            Objectives:
+            1. recognize the capabilities and shortcomings of Jekyll for building different types of websites
+            2. build a Jekyll environment hosted on a local machine
+            3. develop a simple website with Jekyll and free online themes
+            4. write your first post and add simple features using Liquid templating languages
+            5. differentiate domains and hosts and use free web hosts and domains to serve the website
+            </p>
+            <p>
             If you have not installed Jekyll on your system, that is fine and you can still benefit from attending this workshop. However, you probably cannot 
             try some of the activities on your system.
+            </p>
         </aside>
     </section>
 
     <section data-background="#002145">
-        <h2>What is Jekyll?</h2>
-        <br>
-        <br>
+        <img class="r-frame" src="./figures/jekyll-logo.png" height="200"/>
+        
         <span class="fragment" style="font-size:80%;"><p>Static website generator based on Ruby</p></span>
         <span class="fragment" style="font-size:80%;"><p>Developed by Tom Preston-Werner</p></span>
         <span class="fragment" style="font-size:80%;"><p>Fully integrated with GitHub</p></span>
@@ -130,10 +148,19 @@
             </aside>
     </section>
 
+
     <section>
         <h2>Static vs Dynamic</h2>
+        <img class="r-frame" src="./figures/how-web-works.png" height="400"/>
+        <p style="font-size:60%;"> Image from <a href="https://www.youtube.com/watch?v=cpkd4EYYQ8o" target="static-dynamic">How the Web Works</a> on Youtube</p>
         <aside class="notes">
-            What is a static website and do we have any other types of websites?
+            <p>
+            Lets quickly review the difference between a static and dynamic website
+            </p>
+            <p>
+            First, we need to learn about how web works:
+
+            </p>
             Website generators are divided into two categories: Dynamic and Static. Static pages are pre-rendered, cached, and delivered to the user via a content delivery network (CDN). On the other hand, Dynamic pages are generated in real time when the user sends the request.
             Dynamic websites are created and managed by a content management system that is installed on the Host, such as Drupal or Wordpress.
 
@@ -147,47 +174,56 @@
     </section>
 
     <section>
-        <h2>Static Websites</h2>
-        <br>
-        <ul style="font-size:80%;">
-            <li>Templating language</li>
-            <li>Markup language</li>
-        </ul>
-        <br>
-        <br>
-        <h4>Use static websites for:</h4>
-        <br>
-        <ul style="font-size:80%;">
-            <li>Documentation</li>
-            <li>Newsletter Contents</li>
-            <li>Landing Pages</li>
-            <li>Blogs</li>
-        </ul>
+        <h2>Static vs Dynamic</h2>
+        <img class="r-frame" src="./figures/static_dynamic.jpeg" height="400"/>
+        <p style="font-size:60%;"> Image from <a href="https://medium.com/@primekreation/static-vs-dynamic-website-8f36c486045f" target="static-dynamic">Medium @Prime Kreation</a> </p>
         <aside class="notes">
+            <p>
+            Website generators are divided into two categories: Dynamic and Static. Static pages are pre-rendered, cached, and delivered to the user via a content delivery network (CDN). On the other hand, Dynamic pages are generated in real time when the user sends the request.
+            Dynamic websites are created and managed by a content management system that is installed on the Host, such as Drupal or Wordpress.
+            </p>
+            <p>
+            For example, consider Facebook. The landing page is different anytime you open the website and it depends on activities of the user and his/her friends.
+            </p>
+            <p>
+            Static websites are easier for the web browser to load and are great choices for personal blogs, academic websites, or simple business websites. They eliminate the complexity of creating and working with databases and do not have any unnecessary overhead. They are more secure
+            since we are not using any databases and no query means a faster page-loading time. 
+            You can even write a static website all by hand but we usually offload some of this work to website generators.
+            To use static website generators, you are generally expected to use code-editors to build your website. Also, knowing a bit of CSS and HTML can help you to customize a theme for your website. 
+            </p>
+            <p>
             Static website are great options for publishing exactly all stored content to all users. Most of the static website generators use a templating language to build the layout of the
             website, removing the need to repeat tasks over numerous webpages. Also, they use a lightweight markup language to support the creators write any contents without any special software or online tool.
-            
+            </p>
+            <p>
             Static Website generators take templates and combines them with specific information, content of a blog post, to generate full HTML pages for website visitors to see.
-
+            </p>
+            <p>
             Note that when we use Jekyll to build a website, Jekyll is not actually running the live website, like wordpress. It helps us create the static site files and we can host them like any other
             HTML website.
+            </p>
         </aside>
     </section>
 
     <section data-background="#002145">
-        <h2>Let's Install Jekyll!</h2>
+        <h2>Jekyll Installation</h2>
         <br><br>
-        <p style="font-size:60%;"> If you have not installed it on your system, please click on the link: </p>
+        <p style="font-size:60%;"> If you have not installed it on your system, use the link below to install it later: </p>
         <p><a href="https://ubc-library-rc.github.io/intermediate-Jekyll/content/02.Installation.html" target="installation">Installation</a></p>
         <aside class="notes">
-            Now that we learned about static websites and the reasons to use them, let take the first step, Jekyll installation
-
-            If you only want to try Jekyll, you do not need to install it on your system. You can fork Jekyll now on GitHub and change some configuration to serve your website on GitHub pages. 
-            You can even use GitHub GUI to write blog posts. This is all covered in the introduction to Jekyll workshop.
-            However, you cannot go further than that. Each tiny change needs to be committed on GitHub to show up in your website and you need to wait several minutes for GitHub to compile your codes
-            and update the website. Thus, you need to install Jekyll locally to accelerate development.
-
-            If you have not installed Jekyll yet, I am going to cover the installation briefly here. You can find a complete walkthrough in this link.
+        <p>
+        Now that we learned about static websites and the reasons to use them, let take the first step, Jekyll installation
+        </p>
+        <p>
+        If you only want to try Jekyll, you do not need to install it on your system. You can fork Jekyll now on GitHub and change some configuration to serve your website on GitHub pages. 
+        You can even use GitHub GUI to write blog posts. This is all covered in the introduction to Jekyll workshop.
+        However, you cannot go further than that. Each tiny change needs to be committed on GitHub to show up in your website and you need to wait several minutes for GitHub to compile your codes
+        and update the website. Thus, you need to install Jekyll locally to accelerate development.
+        </p>
+        <p>
+        I am not going to cover installation today but if you have any issues with installation, we have troubleshooting during the activity times.
+        Now, lets go to the code editor and terminal and check jekyll installation and
+        </p>   
         </aside>
     </section>
 
@@ -313,13 +349,15 @@
             <img class="r-frame" src="./figures/mediumish-jekyll-theme.webp"/ height="250"/>
         </div>
         <aside class="notes">
+            <p>
             Jekyll themes provide community-maintained templates and styles for users to build their websites. While the basic Minima theme is very robust, you can choose themes from many free resources and themes are available for different purposes.
+            </p>
         </aside> 
     </section> 
 
     <section data-background="#002145">
         <h2>Activity 1</h2>
-
+        
         <p style="font-size:90%;">You can find Jekyll themes for various types of websites:</p>
 
         <ul style="font-size:80%;">
@@ -328,33 +366,34 @@
             <li><a href="https://jekyll-themes.com/free/" target="Jekyll Themes">https://jekyll-themes.com/free/</a></li>
         </ul>
 
-        <p>Check these websites and find a theme. </p>
+        <p style="font-size:80%;"> Choose a "good" theme for your website. </p>
+        <p style="font-size:80%;"> What makes a theme "good"? </p>
         <br> 
-       
         <aside class="notes">
             <p>
-                For the first activity, please find a Jekyll theme you like from one of these websites. You can clone or fork the themes available on GitHub. For other themes, you need to download and unzip them on your local machine. Then, serve it using Jekyll. 
+                For the first activity, I want you to explore these websites and find a theme that works for you. You can clone or fork the themes available on GitHub. For other themes, you need to download and unzip them on your local machine. If the theme has a Gemfile, make sure that you use bundler
+                for serving it on your local machine. Showcase one of the themes to your peers.
+            </p>
+                I used quotation for good, my question for you is what makes a theme good? Simplicity? Compatibility and an active community? Ratings and reviews? Open your mic or use the chat option to share your opinion or recommend themes.
             </p>
             <p>
-                Remember that you need to install the gems used by third-party themes before serving them by running bundle exec jekyll serve the first time you serve them on your local machine.
+                How to choose a theme? what version is the theme at (under version 1 is not a complete theme maybe), look at how many contributors there are, whether contributions are recent, how many active users
             </p>
+            and we are going to stick with Jekyll now 
         </aside> 
     </section> 
 
     <section>
-        <h2>Hyde</h2>
-        <p style="font-size:80%;">If you are not sure, use Hyde: <a href="https://github.com/poole/hyde" target="Hyde">https://github.com/poole/hyde</a></p>
-        <p style="font-size:80%;">or Jekyll Now: <a href="https://github.com/barryclark/jekyll-now" target="Jekyll Now">https://github.com/barryclark/jekyll-now</a></p>   
+        <h2>Jekyll Now</h2>
+        <img src="./figures/JekyllNow.png" alt="Download Jekyll Now" height="250" />
+        <p style="font-size:80%;">Download it from: <a href="https://github.com/barryclark/jekyll-now" target="Hyde">https://github.com/poole/hyde</a></p>
         <img src="./figures/hyde-jekyll-theme.webp"  height="300">
         <p style="font-size:80%;">We will use this theme to learn about other features of Jekyll. </p> 
-        <p style="font-size:70%;">The concepts work in other themes.</p>
+        <p style="font-size:70%;">Basic features will work in any other theme.</p>
         <aside class="notes">
             <p>
-                If you are interested to use themes other than [Minima], Hyde is a simple, two-column, and uncomplicated theme. We will use this theme for the rest of this workshop to demonstrate different tools and capabilities of Jekyll.
-                Remember to download Jekyll now from Github since that version has no hidden directory.
-            </p>
-            <p>
-                The concepts work in other themes as well so if you chose any other theme, that is absolutely fine
+                We will use Jekyll Now to learn about Jekyll features today. It is a very basic theme and do not need any tinkering to run it even on the most recent Jekyll.
+                The features we are learning today works in any other theme and if we have time, we are going to try it very quickly.
             </p>
         </aside>
     </section> 
@@ -390,6 +429,7 @@
         |   ├── _base.scss
         |   └── _layout.scss
         ├── _site
+        ├── assets
         ├── 404.html
         ├── about.md
         ├── .jekyll-cache
@@ -444,8 +484,22 @@
                 Lets see how
             </p>
         </aside>
+    </section>
+    
+    <section>
+        <h2>Activity 2</h2>
+        <p>Put each description in the right basket</p>
+        <p>Access the sheet here: <a href="https://bit.ly/3s00YPA" target="Activity 2"> https://bit.ly/3s00YPA</a></p> 
+        <p>You can edit this file or make a copy</p>
+    <aside class="notes">
+        <p>
+        It is very important to know the role of each directory in Jekyll workflow. Thus, I made a simple exercise which helps on that.
+        Here we have four baskets and some descriptions for the files that are stored in each. Drag and drop the descriptions in the right basket.
 
-    </section> 
+        Do you have any questions about any of these descriptions?
+        </p>
+    </aside>
+    </section>
     
     <section data-background="#002145">
         <h2>Blogging</h2>
@@ -454,6 +508,8 @@
         <p>
             Jekyll is built for blogging. That is why it has a _posts folder and built-in features for parsing your posts and showing them properly on the screen
             We have two types of webpages in Jekyll
+
+            Github Pages is originally for documentation so very friendly for text vs. heavy multi-media sites (It is not a good option if you plan to serve a website with heavy images or videos)
         </p>
     </aside>
     </section>
@@ -527,7 +583,8 @@
             </li>
         </ul>
         <br>
-        <p style="font-size:80%;">Use <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="Jekyll Now">Markdown Cheatsheet</a> for more</p>
+
+        <p style="font-size:80%;">Use <a href="https://markdown-it.github.io/" target="Markdown-it"> Markdown-it</a> for more</p>
     <aside class="notes">
         <p>
         Posts should be formatted in Markdown which is a markup language for creating formatted text using a plain-text editors. There are different Markdown flavours with different capabilities but the main syntax remains unchanged. Lets look at the syntax.
@@ -568,18 +625,11 @@
     </section>
 
     <section>
-        <h2>Activity 2</h2>
-        <ul style="font-size:80%;">
-            <li>Open <b>_posts</b> directory in Hyde or Jekyll Now</li>
-            <li>Write a new post by following these steps:</li>
-                <ul style="font-size:70%;">
-                    <li>Duplicate an old post</li>
-                    <li>Rename the duplicated file (change dates and name of the file)</li>
-                    <li>Change the title of your new post</li>
-                    <li>Use Markdown to write the body of your new post (try adding links and images)</li>
-                </ul>
-            </ul>
-            <img class="r-frame" src="./figures/posts.png"/ height="250"/>
+        <h2>Activity 3</h2>
+        <p>Write one "Post" and change "About me" page</p>
+        <p>Try <a href="https://markdown-it.github.io/" target="Markdown-it">Markdown syntax</a></p> 
+        <p>Serve them on your local machine</p>
+        <p>Are you looking for an example? Take a look at <a href="../materials/2020-08-06-A-new-post.md" target="Activity 3">this file!</a></p>
     <aside class="notes">
         <p>
         In the second activity, you are going to open posts folder in the theme you selected and study the content of the sample posts in that directory.
@@ -856,7 +906,7 @@ Hello Adam!
         </section>
 
         <section data-background="#002145">
-            <h2>Activity 3</h2>
+            <h2>Activity 4</h2>
             <p style="font-size:80%;">If your group number if an odd number, solve <a href="./exercise1.html" target="Exercise 1">Exercise 1</a></p>
 
             <p style="font-size:80%;">and if it is an even number, solve <a href="./exercise2.html" target="Exercise 2">Exercise 2</a> </p>
@@ -915,6 +965,18 @@ Hello Adam!
         <aside class="notes">
         </aside>
         </section>
+
+        <section>
+            <h2>Hyde and Troubleshooting</h2>
+            <p style="font-size:80%;">Download it from: <a href="https://github.com/poole/hyde" target="Hyde">https://github.com/poole/hyde</a></p>
+            <img src="./figures/hyde-jekyll-theme.webp"  height="300">
+            <aside class="notes">
+                <p>
+                    We will use Hyde to learn about Jekyll features today. Hyde is a simple, two-column, and uncomplicated theme.
+                    We are not going to use Jekyll Now since it is a very basic theme, but the features we are learning today works in any other theme.
+                </p>
+            </aside>
+        </section> 
         
 
     <section data-background="#002145">
