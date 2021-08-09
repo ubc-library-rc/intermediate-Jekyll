@@ -36,6 +36,7 @@ By the end of this workshop, students will be able to:
 1. Make a poll for the number of people who have a working version of Jekyll installed
 2. Check the Jekyll version
 3. Make a directory "Jekyll Workshop" for the website
+4. Show the difference between Jekyll Now and Jekyll Now new and describe bundler
 4. Show the themes pages and talk with them about what is a good theme (try to have a discussion in this section)
 5. Show the folders of Jekyll now and describe the role of each of them in Jekyll (a brief overview, open one file in each directory, talk about other directories as well) - activity 2 - let them explain why they put it in one basket and not the other one
 6. Talk about blogging, open one post and describe the different sections of a post, try markdown syntax and show it on the website - HTML and CSS are also included in this section - talk about the difference between post and pages and how to make a new page and access it - activity 3
@@ -52,18 +53,8 @@ By the end of this workshop, students will be able to:
       {% endfor %}
     {% endif %}
 ```
-{% unraw %}
+{% endraw %}
 
 10. Use copyright footer for the include example\
 11. Then go back to svg-icons and connect it to config file - add an email and show how the webpage will update
-12.	Activity 4 and general on Serving
-
-
-
-
-
-
-
-
-
-Show the difference between Jekyll Now and Jekyll Now new and describe bundler
+12.	Activity 4 and notes on Serving
