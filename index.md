@@ -35,13 +35,13 @@ By the end of this workshop, you will be able to:
 | 0:00 | Welcome and using Zoom|
 | 0:05 | Introduction and Installing Jekyll|  
 | 0:15 | Build a simple website + Themes |
-| 0:20 | Activity 1 - Choose a theme |
+| 0:25 | Activity 1 - Choose a theme |
 | 0:30 | Site Structure and Activity 2|
-| 0:40 | Blogging - Activity 3 |
+| 0:45 | Blogging - Activity 3 |
 | 0:50 | Liquid Templating Language |   
-| 1:10 | Activity 3 |
+| 1:15 | Activity 3 |
 | 1:30 | Serving and Deployment |
-| 1:40 | Q&A and Troubleshooting |
+| 1:45 | Q&A and Troubleshooting |
 
 ## Slides
 
