@@ -58,3 +58,10 @@ By the end of this workshop, students will be able to:
 10. Use copyright footer for the `include` example
 11. Then go back to svg-icons and connect it to config file - add an email and show how the webpage will update
 12.	Activity 4 and notes on Serving
+
+## Extra Resources
+
+- [Cloud Cannon course on Jekyll](https://cloudcannon.com/community/learn/jekyll-101)
+- [Build A Blog With Jekyll And GitHub Pages](https://www.smashingmagazine.com/2014/08/build-blog-jekyll-github-pages/)
+- [Building a static website with Jekyll and GitHub Pages](https://programminghistorian.org/en/lessons/building-static-sites-with-jekyll-github-pages)
+- [Youtube Series on Jekyll](https://www.youtube.com/watch?v=T1itpPvFWHI&list=PLLAZ4kZ9dFpOPV5C5Ay0pHaa0RJFhcmcB)
