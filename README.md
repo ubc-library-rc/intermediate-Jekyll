@@ -1,4 +1,5 @@
-# Build and customize a website with Jekyll
+# Intermediate Jekyll
+## Build and customize a website with Jekyll
 ### UBC Library Research Commons
 
 Link to workshop: https://ubc-library-rc.github.io/intermediate-Jekyll/
