@@ -4,7 +4,8 @@ title: Outline
 nav_order: 1
 ---
 
-# Build and customize a website with Jekyll
+# Intermediate Jekyll
+## Build and customize a website with Jekyll
 
 This workshop will guide you to use Jekyll, a powerful static website generator, to build a website on your local machine and serve it on Github pages. In this workshop, we go beyond the material presented in the [Introduction to Jekyll](https://ubc-library-rc.github.io/intro-jekyll/) workshop and explore templates and styles to customize your website using themes, Liquid templating language, and plugins.
 
